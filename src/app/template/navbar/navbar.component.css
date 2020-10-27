@@ -1,0 +1,7 @@
+:host::ng-deep .navbar-color {
+    background-color: #20173d !important;
+}
+
+:host::ng-deep .navbar-color .exit-app {
+    margin-right: 25px;
+}
