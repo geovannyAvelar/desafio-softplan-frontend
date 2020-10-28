@@ -1,27 +1,22 @@
-# CadastroPessoasFront
+# Desafio Softplan
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+Essa é a implementação do frontend do desafio para o processo seletivo da [Softplan](http://www.softplan.com.br). 
+Se trata apenas de um cadastro e listagem de pessoas físicas. É uma Single-page application (SPA) escrita com Angular integrada com uma API escrita em Java.
 
-## Development server
+## Processo de build e deploy
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Todo o processo de build e deploy da aplicação é feito utilizando o Docker, portanto é necessário ter o Docker instalado. Basta seguir o passo-a-passo:
 
-## Code scaffolding
+**ATENÇÃO:** a aplicação por padrão está configurada para acessar uma API rodando na mesma máquina (no localhost), para apontar para a API rodando em outro endereço, basta modificar a variável de ambiente no arquivo src/environments/environment.homologacao.ts, modificando o parâmetro API_URL para apontar para o endereço desejado.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+*  Faça clone deste repositório: 
 
-## Build
+    `git clone https://github.com/geovannyAvelar/desafio-softplan-frontend.git`
+*  Entre no diretório do repositório e faça build utilizando o Docker Compose:
+    
+    `cd desafio-softplan-frontend`
+    
+    `docker build -t cadastro-frontend .`
+*  Terminado o processo de build, faça o deploy com:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+    `docker run -d -p 80:80 --name cadastro-front cadastro-frontend`
