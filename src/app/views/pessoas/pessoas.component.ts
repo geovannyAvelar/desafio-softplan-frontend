@@ -8,6 +8,7 @@ import { environment } from 'src/environments/environment';
 
 import swal from 'sweetalert2';
 import * as moment from 'moment';
+import IMask from 'imask';
 
 declare const M;
 
@@ -69,6 +70,14 @@ export class PessoasComponent implements OnInit {
   initMaterializeComponents() {
     var modals = document.querySelectorAll('.modal');
     M.Modal.init(modals, { dismissible: false });
+
+    IMask(document.getElementById('cpf_filtro'), {
+      mask: '000.000.000-00'
+    });
+
+    IMask(document.getElementById('cpf'), {
+      mask: '000.000.000-00'
+    });
   }
 
   initPessoaForm() {
