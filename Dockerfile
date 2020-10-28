@@ -7,4 +7,5 @@ RUN npm install -g @angular/cli
 RUN ng build --configuration=homologacao
 
 FROM nginx:1.15.8-alpine
+COPY nginx.conf /etc/nginx/nginx.conf
 COPY --from=builder /frontend/dist/cadastro-pessoas-front/ /usr/share/nginx/html
