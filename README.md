@@ -3,6 +3,10 @@
 Essa é a implementação do frontend do desafio para o processo seletivo da [Softplan](http://www.softplan.com.br). 
 Se trata apenas de um cadastro e listagem de pessoas físicas. É uma Single-page application (SPA) escrita com Angular integrada com uma API escrita em Java.
 
+## Demo
+
+Uma demonstração da aplicação rodando no Heroku pode ser vista [aqui](https://desafio-softplan-frontend.herokuapp.com/)
+
 ## Processo de build e deploy
 
 Todo o processo de build e deploy da aplicação é feito utilizando o Docker, portanto é necessário ter o Docker instalado. Basta seguir o passo-a-passo:
